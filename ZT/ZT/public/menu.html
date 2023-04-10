@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>French Burgers: MENU</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/ownstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+
+<body class="bodyMenu" onload="menuOnload()">
+    <!-- Top Navigation -->
+    <!-- Top Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="/images/frenchfrylogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> French Burgers </a>
+
+        <div class="collapse navbar-collapse" style="padding: 5px;" id="navbarsExample03">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" href="index.html" id="navHome">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" style="color: rgb(241, 241, 24);" href="menu.html" id="navMenu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" href="about.html" id="navAbout">About Us</a>
+                    <span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item" style="padding: 0px 10px 0 0;">
+                    <a class="nav-link fadeTransition" href="login.html" id="navLogin">Log In</a>
+                </li>
+                <li class="nav-item" style="padding-top:6px;">
+                    <a onclick="loginModal()" href="#" id="navCart">
+                        <img src="images/cart.png" width="27px" height="auto">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <h1 style="font-family:'Indie Flower', cursive; position: absolute; left: 49%; transform: translateX(-50%); top: 30%; color: rgb(244, 253, 162);
+    font-size:60px; text-align: center;">Just...
+        <br>DÉLICIEUX.</h1>
+    <img src="images/food.png" width="100%" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div style="padding-top: 5px; text-align:center;">
+        <img src="images/menu.png" width="17%" height="auto">
+    </div>
+
+    <div id="productTable" style="float: none; padding: 10px 15px 30px 15px; text-align: center;">
+    </div>
+
+    <div w3-include-html="html/cartModal.html"></div>
+    <div w3-include-html="html/menuCat.html"></div>
+    <div w3-include-html="html/productModal.html"></div>
+    <div w3-include-html="html/socialmedia.html"></div>
+    <div w3-include-html="html/footer.html"></div>
+    <div w3-include-html="html/loginModal.html"></div>
+
+    <div id="editcommentdiv">
+        <div class="modal fade" id="editCommentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="width: 600px;">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            <h5 style="font-size: 24px;">Edit Comment</h5>
+                        </div>
+                        <a class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="images/cross.png" width="15px" height="auto" style="position: absolute; top: 15px; right: 13px;">
+                        </a>
+                    </div>
+                    <div class="modal-body">
+                        <form method="PUT" style="padding-top: 5px; padding-bottom: 5px;">
+                            <div style="padding-top: 5px; padding-bottom: 3px;" id="editTitle"></div>
+                            <textarea style="height: 100px; width: 570px; border-radius: 2px;" placeholder="You are currently attempting to edit your comment. Closing this modal will not update your comment." name="editreviewTextArea"
+                                id="editreviewTextArea" maxlength="5000"></textarea>
+                            <div id="editratings" style="padding: 5px 0 10px 0; margin: 0px auto; border-top: 1px solid #e9ecef;">
+                                <img src="images/smileBW.png" class="editpop" height="40px" width="auto" value="1" onmouseover="rateIt(this, 'editpop')" />
+                                <img src="images/smileBW.png" class="editpop" height="40px" width="auto" value="2" onmouseover="rateIt(this, 'editpop')" />
+                                <img src="images/smileBW.png" class="editpop" height="40px" width="auto" value="3" onmouseover="rateIt(this, 'editpop')" />
+                                <img src="images/smileBW.png" class="editpop" height="40px" width="auto" value="4" onmouseover="rateIt(this, 'editpop')" />
+                                <img src="images/smileBW.png" class="editpop" height="40px" width="auto" value="5" onmouseover="rateIt(this, 'editpop')" />
+                            </div>
+                            <div style="padding: 5px 0 0 0;">
+                                <button class="btn btn-danger fadeTransition" onclick="updateComment()" id="editsubmitComment">Edit Review</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer" style="padding: 10px 10px 10px 0;">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- a dependcy library required by bootstrap js -->
+    <script src="js/popper.js"></script>
+    <!--using bootstrap js for effects like modals -->
+    <script src="js/bootstrap-native-v4.js"></script>
+    <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
+    <script src="js/w3.js"></script>
+    <!--where pur javascript resides -->
+    <script>
+        w3.includeHTML();
+    </script>
+    <script src="js/app.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

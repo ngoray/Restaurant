@@ -1,0 +1,30 @@
+<!-- Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <h5 style="font-size: 24px;">See What's In Your Cart!</h5>
+                        <span>The products you added to your cart will be displayed here.</span>
+                    </div>
+                    <a class="close" data-dismiss="modal" aria-label="Close">
+                        <img src="images/cross.png" width="15px" height="auto" style="position: absolute; top: 15px; right: 13px;">
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <span id="message">
+                        <strong style="display: inline-block;">Products in your cart:</strong>
+                        <div id="emptyCart"></div>
+                        <div id="addedProducts"></div></br>
+                        <div id="addedTotalPrice" ></div>
+                        <div id="deliveryLocation"></div>
+                         <br>
+                         <div style="font-size: 12px;">(As of yet, we only accept payment on delivery. Sorry for the inconvenience caused.)</div>
+                    </span>
+                </div>
+                <div class="modal-footer-left">
+                        <button class="btn fadeTransition btn btn-success" style="color: white; width: 200px;" onclick="checkout()">Checkout</button>
+                    </div>
+            </div>
+        </div>
+    </div>

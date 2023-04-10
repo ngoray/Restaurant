@@ -1,0 +1,22 @@
+<div class="loginCard">
+
+        <img src="images/frenchfrylogo.png" style="width: 50%; height: auto; position: absolute; left: 50%;
+        transform: translateX(-50%); top: 9%;" class="translucent">
+
+    <form method="POST" style="position: absolute; left: 50%; transform: translateX(-50%); top: 55%;" action="#loggedIn">
+
+        <input type="text" name="username" placeholder="Username" class="loginForm" id="loginusername">
+        <br>
+        <input type="password" name="password" placeholder="Password" class="loginForm" id="loginpassword">
+        <input type="submit" name="login" value="Sign In" class="loginButton fadeTransition" onclick="checkLogin()">
+
+    </form>
+    <button class="togglePass" onclick="showPassword()">
+        <img src="images/showpw2.png" id="pwshow" width="30px;" height="auto" title="Toggle Password Visbility (Current Status: Not Visible)">
+    </button>
+    <p style="text-align: center;" class="signupLink">
+        Don't Have An Account?<br>
+
+        <a href="#" onclick="signupModal()" style="color: rgb(214, 57, 57);">Sign Up Here!</a>
+    </p>
+</div>

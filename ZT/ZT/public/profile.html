@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>French Burgers: PROFILE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/ownstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body onload="profileOnload()">
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand topnavFont padding" href="index.html">
+            <img src="/images/frenchfrylogo.png" width="30" height="30" class="d-inline-block align-top" alt=""> French Burgers </a>
+
+        <div class="collapse navbar-collapse" style="padding: 5px;" id="navbarsExample03">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" href="index.html" id="navHome">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" href="menu.html" id="navMenu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fadeTransition" href="about.html" id="navAbout">About Us</a>
+                </li>
+                <li class="nav-item" style="padding: 0px 10px 0 0;">
+                    <a class="nav-link fadeTransition" style="color: rgb(241, 241, 24);" href="login.html" id="navLogin">Log In</a>
+                </li>
+                <li class="nav-item" style="padding-top:6px;">
+                    <a onclick="loginModal()" href="#" id="navCart">
+                        <img src="images/cart.png" width="27px" height="auto">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="profileCard">
+        <h3 style="padding: 20px 0 0 40px;">User Details</h3>
+        <div id="profileUsername"></div>
+        <div id="profileName"></div>
+        <div id="profileEmail"></div>
+        <div id="profileAddress"></div>
+        <div id="profileDateCreated"></div>
+        <br><br>
+     <button class="btnLogout fadeTransition" onclick="logout()">
+        Logout
+    </button>   
+    </div>
+    
+
+
+    <div w3-include-html="html/cartModal.html"></div>
+    <!-- Social Media Icons -->
+    <div w3-include-html="html/socialmedia.html" style="position: absolute; bottom: 50px; left: 90.9%"></div>
+
+    <!-- Footer -->
+    <div w3-include-html="html/footer.html" style="position: absolute; bottom: 0px; width: 100%;"></div>
+    <div w3-include-html="html/loginModal.html"></div>
+    <div w3-include-html="html/editUserModal.html"></div>
+    <div w3-include-html="html/cartmodal.html"></div>
+    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
+    <!-- a dependcy library required by bootstrap js -->
+    <script src="js/popper.js"></script>
+    <!--using bootstrap js for effects like modals -->
+    <script src="js/bootstrap-native-v4.js"></script>
+    <!--a simple library so that html tags can be separated into other files - neater and cleaner -->
+    <script src="js/w3.js"></script>
+    <!--where pur javascript resides -->
+    <script>
+        w3.includeHTML();
+    </script>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>

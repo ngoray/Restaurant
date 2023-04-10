@@ -1,0 +1,63 @@
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 600px;">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h5 style="font-size: 24px;">Product Information</h5>
+                </div>
+                <a class="close" data-dismiss="modal" aria-label="Close">
+                    <img src="images/cross.png" width="15px" height="auto" style="position: absolute; top: 15px; right: 13px;">
+                </a>
+            </div>
+            <div class="modal-body">
+                <span id="message">
+                    <div style="display: inline-block; padding: 0 0 15px 0;">
+                        <img id="productthumbnail" width="200px" height="200px;">
+                    </div>
+                    <div style="position: absolute; left: 36%; top: 5%; ">
+                        <div class="w-100"></div>
+                        <div class="col-12" id="productname" style="padding: 0px 0 20px 15px;">Product Name:</div>
+                        <div class="w-100"></div>
+                        <div class="col-12" id="productprice" style="padding: 0 0 20px 15px;">Product Price:</div>
+                        <div class="w-100"></div>
+                        <div class="col-12" id="productavailability" style="padding: 0 0 0 15px;">Availability:</div>
+                        <div class="w-100"></div>
+                        <div class="col-12" style="padding: 41px 0 0 15px;">
+                            <button class="btn btn-success fadeTransition" style="padding: 10px; font-family: 'Roboto', sans-serif; color: white;" id="atcInModal">Add To Cart</button>
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-12" id="productdescription" style="padding: 0px 0 0px 0px; border-top: 1px solid #e9ecef">Description:</div>
+                </span>
+            </div>
+            <div style="margin: 0px auto; border-top: 1px solid #e9ecef;">
+                <form method="POST" style="padding-top: 5px; padding-bottom: 5px;">
+                    <div id="reviewFor">Reviews for...</div>
+                    <div style="padding-top: 5px; padding-bottom: 3px;">Add a comment about this product!</div>
+                    <textarea style="height: 100px; width: 570px; border-radius: 2px;" placeholder="make a review." name="reviewTextArea" id="reviewTextArea"
+                        maxlength="5000"></textarea>
+                    <div id="ratings" style="padding: 5px 0 10px 0;">
+                        <img src="images/smileBW.png" class="pop" height="40px" width="auto" value="1" onmouseover="rateIt(this, 'pop')" />
+                        <img src="images/smileBW.png" class="pop" height="40px" width="auto" value="2" onmouseover="rateIt(this, 'pop')" />
+                        <img src="images/smileBW.png" class="pop" height="40px" width="auto" value="3" onmouseover="rateIt(this, 'pop')" />
+                        <img src="images/smileBW.png" class="pop" height="40px" width="auto" value="4" onmouseover="rateIt(this, 'pop')" />
+                        <img src="images/smileBW.png" class="pop" height="40px" width="auto" value="5" onmouseover="rateIt(this, 'pop')" />
+                    </div>
+                    <div style="padding: 5px 0 10px 0;">
+                        <button class="btn btn-danger fadeTransition" onclick="addComment()" id="submitComment">Post Review</button>
+                    </div>
+                </form>
+            </div>
+            <div id="commentsTable" class="modal-body" style="border-top: 1px solid #e9ecef;">
+                <div><strong>Comment Section</strong></div>
+                <div id="emptyComment1">
+                </div>
+                <div id="commentBody" class="row px-5"></div>
+            </div>
+            <div class="modal-footer" style="padding: 10px 10px 10px 0;">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
